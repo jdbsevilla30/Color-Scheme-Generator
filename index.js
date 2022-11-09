@@ -19,7 +19,9 @@ submitBtn.addEventListener("submit", function (e) {
         // console.log(clean); //hex
         colorsArray.push(clean);
       });
+      document.getElementById(
+        "color-container2"
+      ).style.backgroundColor = `#${colorsArray[1]}`;
     });
   console.log(type); //input list
-  console.log(colorsArray);
 });
