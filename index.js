@@ -1,27 +1,59 @@
-const submitBtn = document.getElementById("submit");
+let colorsArray = []; //where we will store our seed and our generated colors
+const colorSeed = document.getElementById("get-seed"); //seed value
+let isPressed = false;
+let htmlString = ``;
 
-let colorsArray = [];
-
-submitBtn.addEventListener("submit", function (e) {
+document.getElementById("submit").addEventListener("submit", function (e) {
   e.preventDefault();
-  colorsArray = [];
-  let colorer = document.getElementById("kulay").value;
-  let type = document.getElementById("scheme-mode").value;
-  let colored = colorer.replace("#", ""); //seed
+  if (!isPressed) {
+    render();
+  }
+
+});
+
+const render = () => {
+  //call reset so our DOM and array won't be overflowed
+  emptyElements();
+  const schemeMode = document.getElementById("scheme-mode").value;
+  const colorContainer = document.getElementById("color-container"); //color container
+  const seed = colorSeed.value.replace("#", ""); //we must remove the # because the hex doesnt accept #
+
   fetch(
-    `https://www.thecolorapi.com/scheme?hex=${colored}&mode=${type}&count=4`
+    `https://www.thecolorapi.com/scheme?hex=${seed}&mode=${schemeMode}&count=4`
   )
     .then((res) => res.json())
     .then((data) => {
-      colorsArray.push(colored);
+      colorsArray.push(colorSeed.value.toUpperCase());
       data.colors.forEach(function (color) {
-        const { clean, value } = color.hex;
-        // console.log(clean); //hex
-        colorsArray.push(clean);
+        const { value /**clean */ } = color.hex;
+        colorsArray.push(value); //colorsArray.push(clean) no # code
       });
-      document.getElementById(
-        "color-container2"
-      ).style.backgroundColor = `#${colorsArray[1]}`;
+      isPressed = false;
+      colorsArray.map((colorScheme) => {
+        htmlString += ` 
+      
+        <div class="color-flex" style="background-color: ${colorScheme}">color</div>
+        `;
+        
+      });
+      colorContainer.innerHTML = htmlString;
     });
-  console.log(type); //input list
-});
+};
+
+const emptyElements = () => {
+  //resets the DOM and empties the array
+  colorsArray = [];
+  htmlString = ``;
+  isPressed = true;
+};
+render();
+
+
+
+/**
+ * 
+ *  
+ * 
+ * 
+ * 
+ */
