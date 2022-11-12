@@ -110,12 +110,8 @@
 
   .options {
     width: 15em;
-    padding: 0.625rem;
   }
   .submit {
- 
     width: 7.6875rem;
-    border: none;
-    background-color: #3d4b60;
   }
 }
