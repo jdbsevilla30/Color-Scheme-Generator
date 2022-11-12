@@ -8,7 +8,6 @@ document.getElementById("submit").addEventListener("submit", function (e) {
   if (!isPressed) {
     render();
   }
-
 });
 
 const render = () => {
@@ -34,10 +33,14 @@ const render = () => {
       
         <div class="color-flex" style="background-color: ${colorScheme}">color</div>
         `;
-        
+        console.log(htmlString);
       });
       colorContainer.innerHTML = htmlString;
     });
+};
+
+const generateColor = () => {
+  colorSeed.value = "#" + Math.floor(Math.random() * 16777215).toString(16);
 };
 
 const emptyElements = () => {
@@ -46,14 +49,6 @@ const emptyElements = () => {
   htmlString = ``;
   isPressed = true;
 };
+
+generateColor();
 render();
-
-
-
-/**
- * 
- *  
- * 
- * 
- * 
- */
