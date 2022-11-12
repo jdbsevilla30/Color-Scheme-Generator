@@ -97,3 +97,25 @@
   justify-content: space-around;
   align-items: center;
 }
+
+@media (max-width: 481px) {
+  .project-container {
+    width: 30em;
+    margin: 2em auto;
+  }
+
+  .color-picker {
+    width: 4rem;
+  }
+
+  .options {
+    width: 15em;
+    padding: 0.625rem;
+  }
+  .submit {
+ 
+    width: 7.6875rem;
+    border: none;
+    background-color: #3d4b60;
+  }
+}
