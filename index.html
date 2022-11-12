@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
   <head>
     <meta charset="utf-8" />
@@ -10,26 +9,32 @@
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-    <form id="submit">
-      <input
-        type="color"
-        id="get-seed"
-  
-        
-      />
-      <select id="scheme-mode">
-        <option value="monochrome">Monochrome</option>
-        <option value="monochrome-dark">Monochrome-dark</option>
-        <option value="monochrome-light">Monochrome-light</option>
-        <option value="analogic">Analogic</option>
-        <option value="complement">Complement</option>
-        <option value="analogic-complement">Analogic-complement</option>
-        <option value="triad">Triad</option>
-      </select>
-      <input type="submit" id="submit-btn" />
-    </form>
-    <div id="color-container"></div>
-
+    <div class="project-container">
+      <div class="project-header">
+        <input type="color" id="get-seed" class="color-picker" />
+        <div>
+        <form id="submit">
+          <select id="scheme-mode" class="options">
+            <option value="monochrome">Monochrome</option>
+            <option value="monochrome-dark">Monochrome-dark</option>
+            <option value="monochrome-light">Monochrome-light</option>
+            <option value="analogic">Analogic</option>
+            <option value="complement">Complement</option>
+            <option value="analogic-complement">Analogic-complement</option>
+            <option value="triad">Triad</option>
+          </select>
+        </div>
+          <input
+            type="submit"
+            id="submit-btn"
+            class="submit"
+            value="Get color scheme"
+          />
+        </form>
+      </div>
+      <div class="generated-colors" id="color-container"></div>
+      <div class="color-names" id="color-name-container"></div>
+    </div>
     <script src="index.js" async defer></script>
   </body>
 </html>

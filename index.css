@@ -1,28 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+/*CSS RESET*/
 * {
-  margin: 0;
   padding: 0;
-}
-
-body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
-  font-family: "Red Hat Display", sans-serif;
 }
 
-#color-container {
-  width: 25%;
-  margin: 0 auto;
-  height: auto;
-  display: flex;
-  
+/*TYPOGRAPHY*/
+.submit,
+.color-label {
+  font-size: 0.75rem;
 }
 
-.color-flex {
-  width: 110px;
-  height: 550px;
-  /* background-color: red;
-  width: 100%;
-  height: 50%; */
+.submit,
+.color-names {
+  color: #ffffff;
+}
+/*background colors*/
+.project-header,
+.color-names {
+  background-color: #1f2937;
+}
+
+/*borders*/
+.color-names,
+.project-container {
+  border: 1px solid #1f2937;
+}
+
+/*container of the whole project*/
+.project-container {
+  width: 35em;
+  height: 34.375em;
+  margin: 9.125em auto;
+}
+
+/*flexboxes*/
+.project-header,
+.generated-colors,
+.color-names {
   display: flex;
-  flex-direction: row;
+}
+
+/*options picker*/
+.project-header {
+  padding: 0 0.3125em 0 0.375em;
+  height: 5.625em;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.15);
+  align-items: center;
   justify-content: space-evenly;
+}
+
+.color-picker {
+  width: 3.8125rem;
+}
+
+.options {
+  width: 19.5em;
+  padding: 0.625rem;
+}
+
+.color-picker,
+.options {
+  height: 2.6875rem;
+}
+
+.submit {
+  height: 2.6875rem;
+  width: 7.6875rem;
+  border: none;
+  background-color: #3d4b60;
+}
+
+.submit:hover {
+  cursor: pointer;
+}
+
+.options,
+.submit,
+.color-picker {
+  border-radius: 5px;
+}
+
+/*generated colors*/
+.color {
+  width: 7em;
+  height: 25.75em;
+}
+
+/*color names below*/
+.color-names {
+  height: 2.875em;
+
+  justify-content: space-around;
+  align-items: center;
 }
