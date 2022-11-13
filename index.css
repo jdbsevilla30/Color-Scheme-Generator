@@ -102,12 +102,12 @@
 @media (max-width: 480px) {
   .project-container {
     width: 480px;
-    margin: 50px auto;
+    margin:  auto;
   }
 
   .color {
     width: 7em;
-    height: 40em;
+    height: 35em;
   }
   .color-picker {
     width: 4rem;
