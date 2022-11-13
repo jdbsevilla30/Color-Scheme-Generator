@@ -32,7 +32,8 @@
 
 /*container of the whole project*/
 .project-container {
-  width: 35em;
+  width: 100%;
+  max-width: 35em;
   height: 34.375em;
   margin: 9.125em auto;
 }
@@ -98,12 +99,17 @@
   align-items: center;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .project-container {
     width: 30em;
-    margin: 2em auto;
+    margin: auto auto;
   }
 
+
+  .color {
+    width: 7em;
+    height: 50em;
+  }
   .color-picker {
     width: 4rem;
   }
