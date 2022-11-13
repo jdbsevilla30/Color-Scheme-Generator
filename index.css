@@ -98,7 +98,7 @@
   align-items: center;
 }
 
-@media (max-width: 481px) {
+@media (max-width: 400px) {
   .project-container {
     width: 30em;
     margin: 2em auto;
